@@ -4,12 +4,13 @@
 import sys
 import time
 
-sys.path.append('../')
+sys.path.append("../")
 from obswebsocket import obsws, requests  # noqa: E402
 
 host = "localhost"
 port = 4444
 password = ""
+
 
 def changeToScoreBoard():
     ws = obsws(host, port, password)
@@ -17,12 +18,15 @@ def changeToScoreBoard():
 
     try:
         # Automatically switch scenes between Players Info/ Vs Screen/ Stats
-        ws.call(requests.SetCurrentProgramScene(sceneName="Training Arc - Current Match"))
-        
+        ws.call(
+            requests.SetCurrentProgramScene(sceneName="Training Arc - Current Match")
+        )
+
     except KeyboardInterrupt:
         pass
 
     ws.disconnect()
+
 
 def changeToVenueCam():
     ws = obsws(host, port, password)
@@ -31,7 +35,7 @@ def changeToVenueCam():
     try:
         # Automatically switch scenes between Players Info/ Vs Screen/ Stats
         ws.call(requests.SetCurrentProgramScene(sceneName="Training Arc - Venue"))
-        
+
     except KeyboardInterrupt:
         pass
 
@@ -48,12 +52,12 @@ def changeStats(url):
         time.sleep(1)
         ws.call(requests.SetCurrentScene("Training Arc - Stats"))
         time.sleep(25)
-        
-        
+
     except KeyboardInterrupt:
         pass
 
     ws.disconnect()
+
 
 def startRecording():
     ws = obsws(host, port, password)
@@ -61,11 +65,12 @@ def startRecording():
 
     try:
         ws.call(requests.StartRecording())
-        
+
     except KeyboardInterrupt:
         pass
 
     ws.disconnect()
+
 
 def stopRecording():
     ws = obsws(host, port, password)
@@ -73,7 +78,7 @@ def stopRecording():
 
     try:
         ws.call(requests.StopRecording())
-        
+
     except KeyboardInterrupt:
         pass
 
