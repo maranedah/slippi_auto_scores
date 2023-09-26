@@ -4,9 +4,13 @@ from auto_stats import getStatsUrl
 from obs_script import changeStats, changeToScoreBoard, startRecording, stopRecording, changeToVenueCam
 import vlc
 import os
-
-scoreinfo_path = "C:\\Users\\melee\\Desktop\\Mauro\\Stream\\Melee Stream Tool v1.1\\Stream Tool\\Resources\\Texts\\ScoreboardInfo.json"
-spectate_path = "C:\\Users\\melee\\Documents\\Slippi\\Training Arc\\test"
+import pathlib
+from constants import (
+    ROOT_FOLDER,
+    SLIPPI_FOLDER,
+    scoreinfo_path,
+    spectate_path
+)
 player = vlc.MediaPlayer("melee_menu.flac")
             
 def tourney_match():

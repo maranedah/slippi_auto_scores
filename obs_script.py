@@ -17,7 +17,7 @@ def changeToScoreBoard():
 
     try:
         # Automatically switch scenes between Players Info/ Vs Screen/ Stats
-        ws.call(requests.SetCurrentScene("Training Arc - Current Match"))
+        ws.call(requests.SetCurrentProgramScene(sceneName="Training Arc - Current Match"))
         
     except KeyboardInterrupt:
         pass
@@ -30,7 +30,7 @@ def changeToVenueCam():
 
     try:
         # Automatically switch scenes between Players Info/ Vs Screen/ Stats
-        ws.call(requests.SetCurrentScene("Training Arc - Venue"))
+        ws.call(requests.SetCurrentProgramScene(sceneName="Training Arc - Venue"))
         
     except KeyboardInterrupt:
         pass

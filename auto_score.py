@@ -1,5 +1,9 @@
 from slippi import Game
 import json, os, time
+from constants import (
+    charinfo_path,
+    scoreinfo_path
+)
 
 color_port = {
 	"Red": 1,
@@ -13,10 +17,6 @@ port_color = {
 	3: "Yellow",
 	4: "Green"
 }
-
-scoreinfo_path = "C:\\Users\\melee\\Desktop\\Mauro\\Stream\\Melee Stream Tool v1.1\\Stream Tool\\Resources\\Texts\\ScoreboardInfo.json"
-charinfo_path ="C:\\Users\\melee\\Desktop\\Mauro\\Stream\\Melee Stream Tool v1.1\\Stream Tool\\Resources\\Texts\\Character Info\\"
-
 
 def get_winner(g):
 	last_frame = g.frames[-1]
