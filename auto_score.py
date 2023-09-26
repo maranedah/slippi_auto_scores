@@ -1,5 +1,7 @@
 from slippi import Game
-import json, os, time
+import json
+import os
+import time
 from constants import charinfo_path, scoreinfo_path
 
 color_port = {"Red": 1, "Blue": 2, "Yellow": 3, "Green": 4}
@@ -16,8 +18,8 @@ def get_winner(g):
     port1 = color_port[scoreinfo["p1Color"]]
     port2 = color_port[scoreinfo["p2Color"]]
     p1, p2 = last_frame.ports[port1 - 1], last_frame.ports[port2 - 1]
-    player1, player2 = g.metadata.players[port1 - 1], g.metadata.players[port2 - 1]
-    css1, css2 = g.start.players[port1 - 1], g.start.players[port2 - 1]
+    # player1, player2 = g.metadata.players[port1 - 1], g.metadata.players[port2 - 1]
+    # css1, css2 = g.start.players[port1 - 1], g.start.players[port2 - 1]
 
     stocks_winner = (
         port1

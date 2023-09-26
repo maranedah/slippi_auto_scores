@@ -1,9 +1,12 @@
-import json, glob, os, math, time
+import json
+import glob
+import os
+import math
+import time
 from auto_score import updateScore, resetScore, updateChars
 from auto_stats import getStatsUrl
 from obs_script import changeStats, changeToScoreBoard, changeToVenueCam
 import vlc
-import os
 from constants import scoreinfo_path, spectate_path
 
 player = vlc.MediaPlayer("melee_menu.flac")
@@ -30,7 +33,8 @@ def tourney_match():
         new_n_files = len(os.listdir(spectate_path))
         print(new_n_files)
 
-        # Revisar carpeta si hay archivos nuevos *y no esta cambiando el tamaño del archivo*
+        # Revisar carpeta si hay archivos nuevos
+        # *y no esta cambiando el tamaño del archivo*
         # Si hay, hacer cosas
         if new_n_files > n_files:
             print("Found new file")
